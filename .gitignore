@@ -1,0 +1,23 @@
+# Ignore Python virtual environment
+venv/
+.venv/
+
+# Ignore Python cache and dependencies
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore compiled C++ files and binaries
+*.o
+*.out
+*.log
+*.tmp
+*.exe
+*.a
+*.so
+*.dll
+*.obj

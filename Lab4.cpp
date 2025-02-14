@@ -13,12 +13,12 @@ int main()
 	string cardnum; //create string for card number and takes input for it
 	do //Runs 
 	{
-		cout << "Please enter the 8-digit credit card number (enter -1 to quit): " << endl;
+		cout << "Please enter the 8-digit credit card number (enter -1 to quit): ";
 		cin >> cardnum;
 
 		if (cardnum == "-1")  // Checks if user wants to quit
 	{
-		cout << "Thank you for using \"Credit Card Number Validation\" !" << endl; 
+		cout << "Thank you for using \"Credit Card Number Validation\"!" << endl; 
 		return 0;
 	}
 	} while (cardnum.length() != 8); // Makes sure 8 digits are inputed or it repeats
@@ -53,44 +53,3 @@ int main()
 
 	return 0;
 }
-
-
-
- /* Orginal Code I am swapping out, after I realized a few mistakes from the question to the code
-
-string creditcardnum; //create main string
-	cout << "Please enter the 8-digit credit card number: ";
-	cin >> creditcardnum;
-
-	int step1 = 0; //Creates integer 
-
-	for (int i = 1; i < 8; i+=2)
-	{
-		step1 += int(creditcardnum[i]) - 48; //Converts to integer becasue ASCII of '0' is 48
-	}
-
-	int step2 = 0;
-	for (int i = 0; i < 8; i += 2)
-	{
-		step2 += 2*(int(creditcardnum[i]) - 48) / 10;
-		step2 += 2*(int(creditcardnum[i]) - 48) % 10;
-	}
-
-	int digitcheck = step1 + step2;
-	int newdigitcheck = int(creditcardnum[creditcardnum.size()-1]) - 48;
-
-	if (digitcheck % 10 == 0)
-	{
-		cout << "Number is valid" << endl;
-	}
-	else 
-	{
-		cout << "Number is invalid." << endl;
-		int right = (newdigitcheck + ( 10 - digitcheck % 10)) % 10;
-		cout << "Check digit should have been " << right << endl;
-	}
-
-	system("pause");
-	return 0;
-
-*/ 
