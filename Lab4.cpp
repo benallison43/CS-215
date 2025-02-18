@@ -46,7 +46,7 @@ int main()
 	else 
 	{
 		cout << "Number is invalid." << endl;
-		int correction = (correction + ( 10 - digit % 10)) % 10;
+		int correction = (correction + ( 10 - digit % 10)) % 10; //Correction
 		cout << "Check digit should have been " << correction << endl;
 	}
 	
