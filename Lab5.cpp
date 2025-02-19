@@ -184,8 +184,10 @@ int main()
             cout << "Thank you, have a great day!" << endl;
             return 0; 
         }
+        cin.putback(input);//Fixes Issue when program repeats in while loop
 
-        if (!(cin>>size) || size < 1 || size > 70)
+
+        if (!(cin>>size) || size < 1 || size > 70) //Makes sure it is in range
         {
         cout << "The size is not in the correct range!" << endl;
         // Clear error flags
@@ -197,9 +199,9 @@ int main()
 
         // Clear any leftover characters
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "\nTriangle Pattern:" << endl;
+        cout << "The triangle with size " << size << " (ROMAN NUMBER: " << roman_numeral(size) << " ) is: "<< endl;
         printTri(size); //executes functions defined above
-        cout << "\nRotated Triangle Pattern:" << endl;
+        cout << "The rotation for 90 degrees clockwise:" << endl;
         printTriR90(size); //executes functions defined above
         
     }
