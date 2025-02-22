@@ -38,23 +38,21 @@ int main()
 			even += 2*(int(cardnum[i]) - '0') % 10; // Adds tens place digits
 		}
 
-		int odd2 = 0; 
+		int odd2 = 0; //Ran again but slightly changed to fix weird rounding problem with check digit
 		for (int i = 1; i < 8; i+=2)
 		{
 			odd2 += cardnum[i] - '0'; //Calculates sum of odd positions
 		}
 	
-		int even2 = 0;
+		int even2 = 0; //same as section above, ran for check digit. Swaps 7 for 8.
 		for (int i = 0; i < 8; i += 2) //Calculates sum of even positions 
 		{
 			even2 += 2*(int(cardnum[i]) - '0') / 10; // Adds ones place digits
 			even2 += 2*(int(cardnum[i]) - '0') % 10; // Adds tens place digits
 		}	
 
-		int digit2 = odd2 + even2;
+		int digit2 = odd2 + even2; //Add totals for check digits
 		int digit = odd + even; //Adds totals 
-		cout << odd << endl;
-		cout << even << endl;
 
 		if (digit2 % 10 == 0) //Checks if totals end in 0, by dividing by 10 with a remainder
 			{
