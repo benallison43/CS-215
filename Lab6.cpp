@@ -1,11 +1,11 @@
-/*course: CS215 - 00x
+/*course: CS215 - 401
  *Project: Lab 6 (As part of Project 1)
  *Purpose: Display the year of Super Bowl in Roman Numeral Representation
  *         The first Super Bowl was hold in 1967 (at Los Angeles Memorial Coliseum)
  *         For testing purpose, this program displays the Super Bowls in two-group of 50 years
  *         (1) from year 2000 to year 2049;
  *         (2) from year 5916 to year 5965.
- *Author: (your name)
+ *Author: Ben Allison
  */
 #include <iostream>
 #include <string>
@@ -14,10 +14,50 @@ using namespace std;
 
 //Turns a digit into a Roman numeral
 string roman_digit(int digit, string one, string five, string ten);
+{
+    switch (digit) 
+    {
+        case 0:
+            return ""
+        case 1:
+            return one;
+        case 2:
+            return one + one;
+        case 3:
+            return one + one + one;
+        case 4:
+            return one + five;
+        case 5:
+            return five;
+        case 6:
+            return five + one;
+        case 7:
+            return five + one + one;
+        case 8:
+            return five + one + one + one;
+        case 9:
+            return one + ten;
+    }
+
+}
 
 //Returns a string form of a Roman Numeral.
 //(n must be between 1 and 3999)
 string roman_numeral(int n);
+{
+    int thousands = n / 1000 //Take thousands place
+    int hundreds = (n % 1000) / 100
+    int tens = (n % 100) / 10; //Take tens place
+    int ones = n % 10; //Take ones place
+
+    string roman_thousand = roman_digit(thosands, "M","", "");
+    string roman_hundred = roman_digit(hundreds, "C", "D", "M");
+    string roman_ten = roman_digit(tens, "X","L","C");
+    string roman_one = roman_digit(ones,"I","V","X");
+
+    return roman_thousand + roman_hundred + roman_ten + roman_one;
+
+}
 
 
 int main()
