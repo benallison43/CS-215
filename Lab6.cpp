@@ -46,7 +46,7 @@ string roman_digit(int digit, string one, string five, string ten);
 string roman_numeral(int n);
 {
     int thousands = n / 1000 //Take thousands place
-    int hundreds = (n % 1000) / 100
+    int hundreds = (n % 1000) / 100 //Take hundreds place
     int tens = (n % 100) / 10; //Take tens place
     int ones = n % 10; //Take ones place
 
