@@ -20,90 +20,50 @@ using namespace std;
 
 // It turns a digit into a Roman numeral
 /*string roman_digit(int digit, string one, string five, string ten) */
+string roman_digit(int digit, string one, string five, string ten)
+{
+    switch (digit) 
+    {
+        case 0:
+            return "";
+        case 1:
+            return one;
+        case 2:
+            return one + one;
+        case 3:
+            return one + one + one;
+        case 4:
+            return one + five;
+        case 5:
+            return five;
+        case 6:
+            return five + one;
+        case 7:
+            return five + one + one;
+        case 8:
+            return five + one + one + one;
+        case 9:
+            return one + ten;
+        default:
+            return "";
+    }
+
+}
+
+//Returns a string form of a Roman Numeral.
+//(n must be between 1 and 3999)
 string roman_numeral(int n)
 {
-    if (n < 1 || n > 99) //invalidates any inputs below 1 and above 99
-    {
-        return "Invalid input";
-    }
-    
-        int tens = n / 10; //Take tens place
-        int ones = n % 10; //Take ones place
-
-        //Defines one and ten variables
-        string roman_ten = ""; 
-        string roman_one = "";
-
-
-        switch (tens) //takes ten's place and subs in roman numeral for value
-        {
-            case 1:
-                roman_ten = "X";
-                break;
-            case 2:
-                roman_ten = "XX";
-                break;
-            case 3:
-                roman_ten = "XXX";
-                break;
-            case 4:
-                roman_ten = "XL";
-                break;
-            case 5:
-                roman_ten = "L";
-                break;
-            case 6:
-                roman_ten = "LX";
-                break;
-            case 7:
-                roman_ten = "LXX";
-                break;
-            case 8:
-                roman_ten = "LXXX";
-                break;
-            case 9:
-                roman_ten = "XC";
-                break;
-            case 0:
-                roman_ten = "";
-                break;
-        }
-
-         switch (ones) // same as above but for the ones place
-        {
-            case 1:
-                roman_one = "I";
-                break;
-            case 2:
-                roman_one = "II";
-                break;
-            case 3: 
-                roman_one = "III";
-                break;
-            case 4: 
-                roman_one = "IV";
-                break;
-            case 5:
-                roman_one = "V";
-                break;
-            case 6:
-                roman_one = "VI";
-                break;
-            case 7: 
-                roman_one = "VII";
-                break;
-            case 8:
-                roman_one = "VIII";
-                break;
-            case 9:
-                roman_one = "IX";
-                break;
-            case 0:
-                roman_one = ""; // leaves blank, as that's how roman's did it
-                break;
-        } 
-         return roman_ten + roman_one;
  
+    int tens = (n % 100) / 10; //Take tens place
+    int ones = n % 10; //Take ones place
+
+    
+    string roman_ten = roman_digit(tens, "X","L","C");
+    string roman_one = roman_digit(ones,"I","V","X");
+
+    return roman_ten + roman_one;
+
 }
 // It returns a string form of a Roman Numeral.
 // (n must be between 1 and 3999)
