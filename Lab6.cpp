@@ -13,12 +13,12 @@
 using namespace std;
 
 //Turns a digit into a Roman numeral
-string roman_digit(int digit, string one, string five, string ten);
+string roman_digit(int digit, string one, string five, string ten)
 {
     switch (digit) 
     {
         case 0:
-            return ""
+            return "";
         case 1:
             return one;
         case 2:
@@ -37,20 +37,22 @@ string roman_digit(int digit, string one, string five, string ten);
             return five + one + one + one;
         case 9:
             return one + ten;
+        default:
+            return "";
     }
 
 }
 
 //Returns a string form of a Roman Numeral.
 //(n must be between 1 and 3999)
-string roman_numeral(int n);
+string roman_numeral(int n)
 {
-    int thousands = n / 1000 //Take thousands place
-    int hundreds = (n % 1000) / 100 //Take hundreds place
+    int thousands = n / 1000; //Take thousands place
+    int hundreds = (n % 1000) / 100; //Take hundreds place
     int tens = (n % 100) / 10; //Take tens place
     int ones = n % 10; //Take ones place
 
-    string roman_thousand = roman_digit(thosands, "M","", "");
+    string roman_thousand = roman_digit(thousands, "M","", "");
     string roman_hundred = roman_digit(hundreds, "C", "D", "M");
     string roman_ten = roman_digit(tens, "X","L","C");
     string roman_one = roman_digit(ones,"I","V","X");
