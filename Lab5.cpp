@@ -22,10 +22,11 @@ using namespace std;
 /*string roman_digit(int digit, string one, string five, string ten) */
 string roman_digit(int digit, string one, string five, string ten)
 {
-    switch (digit) 
+    switch (digit) //Same switch case as last lab
     {
+        //Runs a seperate case for every number 0-9 no matter how big overall number my be, as it will all be broken up
         case 0:
-            return "";
+            return ""; //Blank due to it being 0 and returning nothing. 
         case 1:
             return one;
         case 2:
@@ -62,7 +63,7 @@ string roman_numeral(int n)
     string roman_ten = roman_digit(tens, "X","L","C");
     string roman_one = roman_digit(ones,"I","V","X");
 
-    return roman_ten + roman_one;
+    return roman_ten + roman_one; //Adds everything together to form roman numeral
 
 }
 // It returns a string form of a Roman Numeral.
