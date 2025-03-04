@@ -65,3 +65,71 @@ string roman_numeral(int n)
     return roman_thousand + roman_hundred + roman_ten + roman_one; //Adds everything together to form roman numeral
 
 }
+
+
+int main()
+{
+    const int START_SUPERBOWL = 1967;  // The first Super Bowl was hold in 1967 (at Los Angeles Memorial Coliseum) 
+    const int END_SUPERBOWL = 5965;       // The second group displays Super Bowl ending in year 5965
+                                       
+    // define the correct range for Roman Numerals: [MIN_ROMAN, MAX_ROMAN]
+    const int MIN_ROMAN = 1;
+    const int MAX_ROMAN = 3999;
+
+    while (true)
+    {
+        cout << "***********************************************************";
+        cout << "* The Super Bowl is the annual final playoff game         *";
+        cout << "* of the NFL to determine the league champion.            *";
+        cout << "* The first Super Bowl took place on January 15, 1967.    *";
+        cout << "* Super Bowl I (Los Angeles Memorial Coliseum) --> 1967   *";
+        cout << "* This Roman Numerals Convertor is written by Ben Allison *";
+        cout << "* If you had a time machine, which year of Super Bowl     *";
+        cout << "* would you want to attend (1967 - 5965) ?                *";
+        cout << "************************************************************" << endl;
+        cout << "Please enter the year you want to attend (click Q or q to quit): ";
+        string year;
+        cin >> year; 
+
+        if (year == "q" || year == "Q")
+        {
+            cout << "Back to 2024, and have a great day!"
+            return 0; 
+
+        }
+
+        try {
+            year = stoi(year);  // Convert string to int
+        } catch (exception& e) { // If it cannot go to int play message below and restart
+            cout << "Please use a four-digit number to represent a year (1967-5965) !" << endl;
+            continue;  // Restart the loop
+        }
+
+
+
+        if (year < START_SUPERBOWL)
+        {
+          cout << "The time machine will bring you to the year of " <<  year << ":" << endl;
+          cout << "Wait!!! The year you enter is TOO EARLIER than the first Super Bowl!"
+          continue;  // Restart the loop
+        }
+        else if (year > END_SUPERBOWL)
+        {
+            cout << "The time machine will bring you to the year of " <<  year << ":" << endl;
+            cout << "Hold on!!! The year you enter is TOO BIG for Roman Numerals!" << endl;
+            continue;  // Restart the loop
+        }
+        else 
+        {
+           
+        }
+
+
+
+
+    }
+    
+
+
+
+}
