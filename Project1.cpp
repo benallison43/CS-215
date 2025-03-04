@@ -78,22 +78,25 @@ int main()
 
     while (true)
     {
-        cout << "***********************************************************";
-        cout << "* The Super Bowl is the annual final playoff game         *";
-        cout << "* of the NFL to determine the league champion.            *";
-        cout << "* The first Super Bowl took place on January 15, 1967.    *";
-        cout << "* Super Bowl I (Los Angeles Memorial Coliseum) --> 1967   *";
-        cout << "* This Roman Numerals Convertor is written by Ben Allison *";
-        cout << "* If you had a time machine, which year of Super Bowl     *";
-        cout << "* would you want to attend (1967 - 5965) ?                *";
-        cout << "************************************************************" << endl;
+        cout << "***********************************************************" << endl;
+        cout << "* The Super Bowl is the annual final playoff game         *" << endl;
+        cout << "* of the NFL to determine the league champion.            *" << endl;
+        cout << "* The first Super Bowl took place on January 15, 1967.    *" << endl;
+        cout << "* Super Bowl I (Los Angeles Memorial Coliseum) --> 1967   *" << endl;
+        cout << "* This Roman Numerals Convertor is written by Ben Allison *" << endl;
+        cout << "* If you had a time machine, which year of Super Bowl     *" << endl;
+        cout << "* would you want to attend (1967 - 5965) ?                *" << endl; 
+        cout << "***********************************************************" << endl;
+        cout << endl;
         cout << "Please enter the year you want to attend (click Q or q to quit): ";
         string cogito; //cogito is a play on the roman phrase "I think; therefore I am." it is the start word of the phrase
-        cin >> cogito; 
+        cin >> cogito; //Takes in year
+        cout << endl; // Skips line for readabilty
+
 
         if (cogito == "q" || cogito == "Q")
         {
-            cout << "Back to 2024, and have a great day!";
+            cout << "Back to 2024, and have a great day!" << endl;
             return 0; 
 
         }
@@ -104,28 +107,36 @@ int main()
             ergo = stoi(cogito);  // Convert string to int
         } catch (exception& e) { // If it cannot go to int play message below and restart
             cout << "Please use a four-digit number to represent a cogito (1967-5965) !" << endl;
+            cout << endl;
             continue;  // Restart the loop
         }
 
-
+        int sum = ergo - 1966;
 
         if (ergo < START_SUPERBOWL)
         {
           cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
+          cout << endl;
           cout << "Wait!!! The year you enter is TOO EARLIER than the first Super Bowl!" << endl;
+          cout << endl;
           continue;  // Restart the loop
         }
         else if (ergo > END_SUPERBOWL)
         {
             cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
+            cout << endl;
             cout << "Hold on!!! The year you enter is TOO BIG for Roman Numerals!" << endl;
+            cout << endl;
             continue;  // Restart the loop
         }
         else 
         {
            cout <<" The time machine will bring you to the year of " << ergo << ":" << endl; 
-           cout << "It is Super Bowl " << roman_numeral(ergo) << endl;
-           cout << "We will help you find out the result and other intresting information...next time :)";
+           cout << endl;
+           cout << "It is Super Bowl " << roman_numeral(sum) << endl;
+           cout << endl;
+           cout << "We will help you find out the result and other intresting information...next time :)" << endl; 
+           cout << endl;
            continue;
         }
 
