@@ -70,7 +70,7 @@ string roman_numeral(int n)
 int main()
 {
     const int START_SUPERBOWL = 1967;  // The first Super Bowl was hold in 1967 (at Los Angeles Memorial Coliseum) 
-    const int END_SUPERBOWL = 5965;       // The second group displays Super Bowl ending in year 5965
+    const int END_SUPERBOWL = 5965;       // The second group displays Super Bowl ending in cogito 5965
                                        
     // define the correct range for Roman Numerals: [MIN_ROMAN, MAX_ROMAN]
     const int MIN_ROMAN = 1;
@@ -88,40 +88,45 @@ int main()
         cout << "* would you want to attend (1967 - 5965) ?                *";
         cout << "************************************************************" << endl;
         cout << "Please enter the year you want to attend (click Q or q to quit): ";
-        string year;
-        cin >> year; 
+        string cogito; //cogito is a play on the roman phrase "I think; therefore I am." it is the start word of the phrase
+        cin >> cogito; 
 
-        if (year == "q" || year == "Q")
+        if (cogito == "q" || cogito == "Q")
         {
-            cout << "Back to 2024, and have a great day!"
+            cout << "Back to 2024, and have a great day!";
             return 0; 
 
         }
 
+
+        int ergo;
         try {
-            year = stoi(year);  // Convert string to int
+            ergo = stoi(cogito);  // Convert string to int
         } catch (exception& e) { // If it cannot go to int play message below and restart
-            cout << "Please use a four-digit number to represent a year (1967-5965) !" << endl;
+            cout << "Please use a four-digit number to represent a cogito (1967-5965) !" << endl;
             continue;  // Restart the loop
         }
 
 
 
-        if (year < START_SUPERBOWL)
+        if (ergo < START_SUPERBOWL)
         {
-          cout << "The time machine will bring you to the year of " <<  year << ":" << endl;
-          cout << "Wait!!! The year you enter is TOO EARLIER than the first Super Bowl!"
+          cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
+          cout << "Wait!!! The year you enter is TOO EARLIER than the first Super Bowl!" << endl;
           continue;  // Restart the loop
         }
-        else if (year > END_SUPERBOWL)
+        else if (ergo > END_SUPERBOWL)
         {
-            cout << "The time machine will bring you to the year of " <<  year << ":" << endl;
+            cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
             cout << "Hold on!!! The year you enter is TOO BIG for Roman Numerals!" << endl;
             continue;  // Restart the loop
         }
         else 
         {
-           
+           cout <<" The time machine will bring you to the year of " << ergo << ":" << endl; 
+           cout << "It is Super Bowl " << roman_numeral(ergo) << endl;
+           cout << "We will help you find out the result and other intresting information...next time :)";
+           continue;
         }
 
 
