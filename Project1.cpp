@@ -76,8 +76,9 @@ int main()
     const int MIN_ROMAN = 1;
     const int MAX_ROMAN = 3999;
 
-    while (true)
-    {
+    while (true) //Only ends program once q is entered or ctrl+c //q is added later (line 97)
+    {   
+        cin.clear(); //Clears previous input to prevent errors
         cout << "***********************************************************" << endl;
         cout << "* The Super Bowl is the annual final playoff game         *" << endl;
         cout << "* of the NFL to determine the league champion.            *" << endl;
@@ -94,10 +95,10 @@ int main()
         cout << endl; // Skips line for readabilty
 
 
-        if (cogito == "q" || cogito == "Q")
+        if (cogito == "q" || cogito == "Q") //Quit command
         {
             cout << "Back to 2024, and have a great day!" << endl;
-            return 0; 
+            return 0; //ends program
 
         }
 
@@ -113,7 +114,7 @@ int main()
 
         int sum = ergo - 1966;
 
-        if (ergo < START_SUPERBOWL)
+        if (ergo < START_SUPERBOWL) //If year is before first super bowl
         {
           cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
           cout << endl;
@@ -121,7 +122,7 @@ int main()
           cout << endl;
           continue;  // Restart the loop
         }
-        else if (ergo > END_SUPERBOWL)
+        else if (ergo > END_SUPERBOWL) //If year is too big for roman numeral
         {
             cout << "The time machine will bring you to the year of " <<  ergo << ":" << endl;
             cout << endl;
@@ -133,7 +134,7 @@ int main()
         {
            cout <<" The time machine will bring you to the year of " << ergo << ":" << endl; 
            cout << endl;
-           cout << "It is Super Bowl " << roman_numeral(sum) << endl;
+           cout << "It is Super Bowl " << roman_numeral(sum) << endl; //Displays roman numeral after running it through functions above main
            cout << endl;
            cout << "We will help you find out the result and other intresting information...next time :)" << endl; 
            cout << endl;

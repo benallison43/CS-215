@@ -68,7 +68,7 @@ string roman_numeral(int n)
 }
 
 
-int main()
+int main() 
 {
     const int START_SUPERBOWL = 1967;  // The first Super Bowl was hold in 1967 (at Los Angeles Memorial Coliseum) 
     const int FIRST_START = 2000;      // The first group displays Super Bowl starting in year 2000
