@@ -38,15 +38,15 @@ void dropTWO(double scores[], int& size) //Removes lowest and highest score
     size--; //removes largest value
 }
 
-double final_score(double scores[], int size)
+double final_score(double scores[], int size) //Calculates Average
 {
     double sum = 0;
     for (int i = 0; i < size; ++i)
     { 
-        sum = sum + scores[i];
+        sum = sum + scores[i]; //Adds each number to the sum
     }
 
-    double mean = sum/size;
+    double mean = sum/size; //divides sum by the total number leaving the average
 
     return mean; 
 
@@ -58,31 +58,32 @@ double final_score(double scores[], int size)
 
 int main ()
 {
+//Define Varibles
 double score[6];
 int size = 0;
 string input;
 
 
-while (size < 6)
+while (size < 6) //Main command to run at least 6 times but will repeat if an incorrect input is put in. 
 {
-    cout << "Please enter your score for the gymnast:" << endl;
+    cout << "Please enter your score for the gymnast:" << endl; //Takes entire line
     getline(cin, input);
     stringstream ss(input);
     double ballot;
 
-    if (ss >> ballot) // successfully read a number
+    if (ss >> ballot) // successfully read a number and blocks out non number values with stream string
     {
-        if (ballot >= 0.0 && ballot <= 10.0)
+        if (ballot >= 0.0 && ballot <= 10.0) //If there is a 
         {
             score[size] = ballot;
-            size++;
+            size++; //Adds to count for while loop to end
         }
-        else
+        else //Rejects input that doesn't start with the double
         {
             cout << "Invalid score! Expecting a score in the range [0.00, 10.00]" << endl;
         }
     }
-    else
+    else //Rejects input that doesn't start with the double
     {
         cout << "Invalid score! Expecting a score in the range [0.00, 10.00]" << endl;
     }
@@ -91,7 +92,7 @@ while (size < 6)
     
     cout << "The scores from the judges are:" << endl;
 
-    for (int i = 0; i < 6; ++i)
+    for (int i = 0; i < 6; ++i) //produces each judge score
     {
         cout << fixed << setprecision(2) << score[i] << " ";
     }
@@ -99,14 +100,14 @@ while (size < 6)
 
     cout << "The scores after dropping the highest and lowest scores:" << endl;
     int modified_size = 6;
-    dropTWO(score, modified_size);
+    dropTWO(score, modified_size); //runs function and produces new scores
     
-    for (int i = 0; i < modified_size; ++i)
+    for (int i = 0; i < modified_size; ++i) //displays modified scores
     {
         cout << fixed << setprecision(2) << score[i] << " ";
     }
     cout << endl;
-
+    //Produces final line with everything intact
     cout << "Final Execution Score is: " << fixed << setprecision(2) << final_score(score, modified_size) << endl;
 
     return 0;
